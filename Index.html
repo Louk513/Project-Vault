@@ -1,241 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Project Vault | Official</title>
-  <meta name="description" content="Project Vault – Community driven meme coin on Solana." />
-  
-  <!-- Favicon Icon -->
-  <link rel="icon" href="https://cdnjs.cloudflare.com">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Vault ($VAULT)</title>
+
+  <meta name="description" content="Project Vault ($VAULT) — a community-driven Solana meme coin. No promises. No hype. Just the vault.">
 
   <style>
-    /* --- CSS STYLING --- */
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       background: radial-gradient(circle at top, #0f172a, #020617);
       color: #e5e7eb;
       line-height: 1.6;
-      overflow-x: hidden;
     }
-    a { color: #38bdf8; text-decoration: none; }
-    
+
+    a { text-decoration: none; }
+
     header {
-      padding: 4rem 1rem 3rem;
       text-align: center;
+      padding: 5rem 1rem 6rem;
       position: relative;
     }
 
     .vault-glow {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at center, rgba(56,189,248,0.15), transparent 70%);
-      animation: pulse 4s infinite ease-in-out;
+      background: radial-gradient(circle, rgba(56,189,248,0.25), transparent 60%);
+      animation: pulse 4s infinite;
       z-index: 0;
     }
 
-    @keyframes pulse { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.8; } }
-
-    header h1, header p, .stats-ticker, .main-buy-wrapper { position: relative; z-index: 1; }
-    header h1 { font-size: clamp(2.2rem, 7vw, 3.5rem); letter-spacing: 2px; text-shadow: 0 0 15px rgba(56,189,248,0.4); }
-    header p { margin-top: 0.5rem; font-size: 1.1rem; color: #cbd5f5; max-width: 500px; margin-inline: auto; }
-
-    /* Stats Dashboard */
-    .stats-ticker {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-      background: rgba(0, 0, 0, 0.5);
-      padding: 0.8rem 1.5rem;
-      border-radius: 50px;
-      display: inline-flex;
-      border: 1px solid rgba(56, 189, 248, 0.3);
+    @keyframes pulse {
+      0%,100% { opacity: 0.6; }
+      50% { opacity: 1; }
     }
-    .stat-item { text-align: center; }
-    .stat-label { font-size: 0.65rem; color: #94a3b8; text-transform: uppercase; font-weight: bold; }
-    .stat-value { font-size: 1.1rem; font-weight: bold; color: #38bdf8; font-family: 'Courier New', monospace; }
 
-    /* Call to Action Button */
-    .main-buy-wrapper { text-align: center; margin: 2rem 0; }
-    .btn-buy {
+    header h1,
+    header p,
+    header a {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      margin-top: 1rem;
+      color: #cbd5f5;
+    }
+
+    .btn {
       display: inline-block;
-      background: #00ffbd; 
-      color: #000 !important; 
-      font-size: 1.4rem; 
-      padding: 1rem 2.2rem; 
-      border: 3px solid #000; 
-      box-shadow: 5px 5px 0px #000;
-      font-weight: 900;
-      border-radius: 8px;
-      transition: 0.1s;
-      text-transform: uppercase;
+      margin-top: 1.5rem;
+      padding: 1rem 2rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #22c55e, #4ade80);
+      color: #022c22;
+      font-weight: bold;
     }
-    .btn-buy:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0px #000; }
 
-    .container { max-width: 900px; margin: auto; padding: 0 1rem; }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
     .card {
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(148, 163, 184, 0.1);
+      background: rgba(15,23,42,0.85);
       border-radius: 16px;
       padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      margin-bottom: 2rem;
+      border: 1px solid rgba(148,163,184,0.15);
     }
-    .card h2 { margin-bottom: 1rem; color: #fff; font-size: 1.6rem; border-left: 4px solid #38bdf8; padding-left: 10px; }
-    
-    .links { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
-    .btn {
-      flex: 1;
-      min-width: 140px;
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .link-btn {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: bold;
+    }
+
+    .ca {
+      background: #020617;
+      border: 1px dashed #38bdf8;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+      font-family: monospace;
+      color: #38bdf8;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      margin-top: 0.75rem;
+      background: none;
+      border: 1px solid #38bdf8;
+      color: #38bdf8;
+      padding: 0.5rem 1.2rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    footer {
       text-align: center;
-      padding: 0.8rem;
-      border-radius: 8px;
-      background: #1e293b;
-      color: #fff !important;
-      font-weight: 600;
-      border: 1px solid rgba(255,255,255,0.1);
+      padding: 2rem;
+      color: #94a3b8;
+      font-size: 0.9rem;
     }
-    .btn:hover { background: #334155; }
-
-    .ca-box {
-      background: #000; border: 1px dashed #38bdf8; padding: 1rem;
-      border-radius: 10px; margin-top: 1rem; text-align: center;
-    }
-    .ca-text { word-break: break-all; font-family: monospace; color: #38bdf8; font-size: 0.9rem; display: block; margin-bottom: 0.5rem; }
-    .copy-btn { background: #38bdf8; border: none; color: #000; padding: 0.4rem 1rem; border-radius: 5px; cursor: pointer; font-weight: bold; }
-
-    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-    .grid-item { background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 10px; text-align: center; font-size: 0.9rem; }
-
-    .twitter-container { min-height: 400px; border-radius: 12px; overflow: hidden; background: #000; }
-
-    #toast {
-      visibility: hidden; background: #38bdf8; color: #000; padding: 12px 24px; border-radius: 50px;
-      position: fixed; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 999; font-weight: bold;
-    }
-    #toast.show { visibility: visible; animation: fadeInUp 0.4s; }
-    @keyframes fadeInUp { from {opacity: 0; bottom: 0;} to {opacity: 1; bottom: 40px;} }
-    
-    footer { text-align: center; padding: 3rem 1rem; color: #475569; font-size: 0.8rem; }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <div class="vault-glow"></div>
-    <h1>🔐 Project Vault</h1>
-    <p>Locked, Loaded, and Community Owned.</p>
-    
-    <!-- Live Market Data -->
-    <div class="stats-ticker">
-      <div class="stat-item">
-        <div class="stat-label">Price</div>
-        <div class="stat-value" id="price">...</div>
-      </div>
-      <div class="stat-item" style="border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem;">
-        <div class="stat-label">Market Cap</div>
-        <div class="stat-value" id="mcap">...</div>
-      </div>
+<header>
+  <div class="vault-glow"></div>
+  <h1>🔐 Project Vault</h1>
+  <p>Community-driven Solana meme coin — $VAULT</p>
+
+  <a class="btn" href="https://join.pump.fun/HSag/690y1a6u" target="_blank">
+    🚀 Buy $VAULT on Pump.fun
+  </a>
+</header>
+
+<main class="container">
+
+  <section class="card">
+    <h2>What Project Vault Is</h2>
+    <p>
+      Project Vault is a community-owned Solana meme coin focused on culture, transparency,
+      and long-term community energy.
+    </p>
+    <p style="margin-top:0.75rem;">
+      No venture capital. No fake promises. Just a vault mindset.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>What Project Vault Is NOT</h2>
+    <ul style="margin-left:1.2rem;">
+      <li>Not financial advice</li>
+      <li>No guaranteed returns</li>
+      <li>No private sales or team allocations</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>How to Buy $VAULT</h2>
+    <ol style="margin-left:1.2rem;">
+      <li>Get SOL in your wallet</li>
+      <li>Visit Pump.fun</li>
+      <li>Paste the official contract address</li>
+      <li>Buy and join the vault</li>
+    </ol>
+
+    <a class="btn" href="https://join.pump.fun/HSag/690y1a6u" target="_blank">
+      Buy on Pump.fun
+    </a>
+  </section>
+
+  <section class="card">
+    <h2>Token Information</h2>
+    <ul style="margin-left:1.2rem;">
+      <li><strong>Symbol:</strong> $VAULT</li>
+      <li><strong>Chain:</strong> Solana</li>
+      <li><strong>Launch:</strong> Fair Launch</li>
+      <li><strong>Ownership:</strong> Community</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Official Links</h2>
+    <div class="links">
+      <a class="link-btn" href="https://x.com/Loukas513" target="_blank">X (Twitter)</a>
+      <a class="link-btn" href="https://t.me/Project_VaultbyUS" target="_blank">Telegram</a>
+    </div>
+  </section>
+
+  <section class="card" style="border:1px solid rgba(239,68,68,0.6); background: rgba(127,29,29,0.15);">
+    <h2>⚠️ Anti-Scam Notice</h2>
+    <p><strong>Official Contract Address:</strong></p>
+
+    <div class="ca" id="ca">
+      A2PYwpubibFka6U4P3SdYmeK8EDxUYPyZqXP5iN3pump
     </div>
 
-    <!-- Main Buy Link -->
-    <div class="main-buy-wrapper">
-      <a href="https://pump.fun" target="_blank" class="btn-buy">
-        🚀 BUY ON PUMP.FUN
-      </a>
-    </div>
-  </header>
+    <button class="copy-btn"
+      onclick="navigator.clipboard.writeText(document.getElementById('ca').innerText)">
+      Copy Address
+    </button>
 
-  <main class="container">
-    
-    <!-- Official Links Card -->
-    <section class="card">
-      <h2>Join the Community</h2>
-      <div class="links">
-        <a class="btn" style="border-color:#00ffbd;" href="https://x.com" target="_blank">Twitter / X</a>
-        <a class="btn" style="border-color:#38bdf8;" href="https://t.me" target="_blank">Telegram</a>
-        <a class="btn" style="border-color:#8b5cf6;" href="https://join.pump.fun" target="_blank">Chart</a>
-      </div>
-    </section>
+    <p style="margin-top:1rem;">
+      We will never DM first, never ask for private keys or seed phrases.
+      If it’s not linked here, it’s not Project Vault.
+    </p>
+  </section>
 
-    <!-- Twitter Feed Card -->
-    <section class="card">
-      <h2>Latest From X</h2>
-      <div class="twitter-container">
-        <a class="twitter-timeline" data-height="450" data-theme="dark" href="https://twitter.com">Tweets by Loukas513</a> 
-        <script async src="https://platform.twitter.com" charset="utf-8"></script>
-      </div>
-    </section>
+</main>
 
-    <!-- Tokenomics Card -->
-    <section class="card">
-      <h2>Vault Tokenomics</h2>
-      <div class="grid">
-        <div class="grid-item">🔥 100% Fair Launch</div>
-        <div class="grid-item">💧 Burnt Liquidity</div>
-        <div class="grid-item">🔒 No Team Wallet</div>
-        <div class="grid-item">👥 Community Led</div>
-      </div>
-    </section>
-
-    <!-- Contract Card -->
-    <section class="card">
-      <h2>Contract Address</h2>
-      <div class="ca-box">
-        <span class="ca-text" id="ca_val">A2PYwpubibFka6U4P3SdYmeK8EDxUYPyZqXP5iN3pump</span>
-        <button class="copy-btn" onclick="copyText()">COPY CA</button>
-      </div>
-    </section>
-
-    <section class="card" style="border: 1px solid #ef4444; background: rgba(239, 68, 68, 0.05);">
-      <h2 style="color: #ef4444; border-color: #ef4444;">Anti-Scam</h2>
-      <p style="font-size: 0.9rem;">We never DM first. Always verify the CA ends in <strong>pump</strong>.</p>
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Project Vault. All Rights Reserved.</p>
-  </footer>
-
-  <div id="toast">Copied to clipboard!</div>
-
-  <script>
-    /* --- JAVASCRIPT LOGIC --- */
-    
-    // 1. Live Price & Market Cap Fetcher
-    async function getSolanaData() {
-      const tokenAddress = "A2PYwpubibFka6U4P3SdYmeK8EDxUYPyZqXP5iN3pump";
-      try {
-        const res = await fetch(`https://api.dexscreener.com{tokenAddress}`);
-        const data = await res.json();
-        if (data.pairs && data.pairs[0]) {
-          const pair = data.pairs[0];
-          document.getElementById('price').innerText = `$${parseFloat(pair.priceUsd).toFixed(8)}`;
-          document.getElementById('mcap').innerText = `$${Math.round(pair.fdv).toLocaleString()}`;
-        }
-      } catch (err) {
-        document.getElementById('price').innerText = "Updating...";
-      }
-    }
-    
-    // Run stats every 20 seconds
-    getSolanaData();
-    setInterval(getSolanaData, 20000);
-
-    // 2. Copy Function
-    function copyText() {
-      const text = document.getElementById('ca_val').innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        const t = document.getElementById('toast');
-        t.className = "show";
-        setTimeout(() => { t.className = ""; }, 3000);
-      });
-    }
-  </script>
+<footer>
+  <p>
+    Project Vault ($VAULT) is a meme coin with no intrinsic value or expectation of profit.
+    This website is for informational purposes only.
+  </p>
+</footer>
 
 </body>
 </html>
